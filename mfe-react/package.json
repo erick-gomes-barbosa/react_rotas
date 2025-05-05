@@ -20,11 +20,11 @@
     "@babel/eslint-parser": "^7.23.3",
     "@babel/plugin-transform-runtime": "^7.23.3",
     "@babel/preset-env": "^7.23.3",
-    "@babel/preset-react": "^7.23.3",
+    "@babel/preset-react": "^7.27.1",
     "@babel/preset-typescript": "^7.23.3",
     "@babel/runtime": "^7.23.3",
     "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^12.0.0",
+    "@testing-library/react": "^12.1.5",
     "babel-jest": "^27.5.1",
     "concurrently": "^6.2.1",
     "cross-env": "^7.0.3",
@@ -49,19 +49,35 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "@nhost/react": "^3.10.4",
+    "@nhost/react-apollo": "^17.0.4",
     "@types/jest": "^27.0.1",
-    "@types/react": "^17.0.19",
-    "@types/react-dom": "^17.0.9",
     "@types/systemjs": "^6.1.1",
     "@types/webpack-env": "^1.16.2",
     "primeicons": "^7.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "react-router-dom": "^7.1.5",
     "single-spa": "^5.9.3",
     "single-spa-react": "^4.3.1",
     "trustechreact-components": "^1.1.0",
     "zod": "^3.24.3"
   },
-  "types": "dist/mfe-react.d.ts"
+  "types": "dist/mfe-react.d.ts",
+  "overrides": {
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
+    "@types/react": "18.0.0",
+    "@types/react-dom": "18.0.0",
+    "@testing-library/react": {
+      "react": "18.1.0",
+      "react-dom": "18.1.0"
+    },
+    "@nhost/react": {
+      "react": "18.1.0",
+      "react-dom": "18.1.0"
+    },
+    "@nhost/react-apollo": {
+      "react": "18.1.0",
+      "react-dom": "18.1.0"
+    }
+  }
 }
