@@ -1,7 +1,7 @@
 import { DynamicForm, FormProps, refFormProps, zodRequired } from "trustechreact-components";
 import React from "react";
 import { z } from "zod";
-import setMutation from "../api/tests"
+import {setMutation} from "../api/tests"
 
 type FormValues = {
     nome: string;
@@ -14,7 +14,7 @@ type FormValues = {
 
 const DynamicFormView = () => {
     const refForm = React.useRef<refFormProps>(null);
-    const {mutation, data} = setMutation();
+    const mutation = setMutation();
 
     const form: FormProps = {
         id: "formTeste",
@@ -75,7 +75,7 @@ const DynamicFormView = () => {
 
     const onSubmit = async (values: FormValues) => {
         const form = {idade: values.idade, nome: values.nome, sexo: values.sexo.values}
-        await mutation({variables: {form}});
+        await mutation.insertPeople(form);
     }
 
     return (
